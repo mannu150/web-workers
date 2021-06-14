@@ -7,7 +7,7 @@ worker.addEventListener("message", (evt)=> {
 //And in workers file
 self.postMessage("Hello")
 //*************************************************************************************************** */
-//Min page to worker
+//Main page to worker
 //In Main Page
 worker.addEventListener("message", (evt)=> {
     console.log(evt.data)

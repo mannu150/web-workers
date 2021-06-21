@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <button id="b1">Console Log hello</button>
+            <button id="b2">Start fibonacci</button>
+            <div><ul id="u1"> </ul></div>
+
+    </div>
+
+    <script>
+        document.getElementById("b1").addEventListener("click", ()=>{
+            console.log("hello")
+        });
+        document.getElementById("b2").addEventListener("click", ()=>{
+            renderFibo();
+        });
+        function renderFibo() {
+            for(let i=3;i<10;i++) {
+                const item = fib(i);
+                (function() {
+                    const li = document.createElement("li");
+                    li.innerText = item;
+                    document.getElementById("u1").appendChild(li);
+                })(item)
+
+            }
+        }
+        function fib(n) {
+            if (n < 2) {
+                return n;
+            }
+            return fib(n-1) + fib(n-2);
+        }
+    </script>
+</body>
+</html>
